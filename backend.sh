@@ -66,7 +66,7 @@ validate $? "copyinh backend service file to systemd"
 systemctl daemon-reload &>>$LOGPATH
 validate $? "reloading daemon"
 
-mysql -h db.gurudathbn.site -uroot -p$mysql_root_password < /app/schema/backend.sql &>>$LOGPATH
+mysql -h db.gurudathbn.site -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGPATH
 validate $? "loading data to mysql"
 
 systemctl start backend &>>$LOGPATH
