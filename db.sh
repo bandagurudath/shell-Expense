@@ -40,7 +40,7 @@ systemctl enable mysqld &>>$LOGPATH
 validate $? "enabling mysqld service"
 
 mysql -h db.gurudathbn.site -uroot -p$mysql_root_password -e 'show databases;' &>>$LOGPATH
-if[ $? -eq 0 ]
+if [ $? -eq 0 ]
 then
 echo "mysql_root_password is alreday set"
 else
