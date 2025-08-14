@@ -39,7 +39,7 @@ cd /usr/share/nginx/html &>>$LOGPATH
 unzip /tmp/frontend.zip &>>$LOGPATH
 validate $? "unzipping frontend code"
 
-cp /home/ec2-user/shell-expense/expense.conf /etc/nginx/default.d/expense.conf &>>$LOGPATH
+cp /home/ec2-user/shell-Expense/expense.conf /etc/nginx/default.d/expense.conf &>>$LOGPATH
 validate $? "copying expense conf file"
 
 systemctl start nginx &>>$LOGPATH
