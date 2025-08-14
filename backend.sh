@@ -39,6 +39,9 @@ validate $? "Enabling nodejs version 20"
 dnf install nodejs -y &>>$LOGPATH
 validate $? "starting nodejs"
 
+dnf install mysql -y &>>$LOGPATH
+validate $? "starting nodejs"
+
 id expense &>>$LOGPATH
 if [ $? -eq 0 ]
 then
@@ -66,7 +69,7 @@ validate $? "copyinh backend service file to systemd"
 systemctl daemon-reload &>>$LOGPATH
 validate $? "reloading daemon"
 
-mysql -h db.gurudathbn.site -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGPATH
+mysql -h db.gurudathbn.site -uroot -p$mysql_root_password < /app/schema/backend.sql &>>$LOGPATH
 validate $? "loading data to mysql"
 
 systemctl start backend &>>$LOGPATH
