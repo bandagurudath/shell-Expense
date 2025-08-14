@@ -49,7 +49,7 @@ validate $? "creating expense user"
 fi
 
 rm -rf /app &>>$LOGPATH
-curl -o /tmp/backend.service https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOGPATH
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOGPATH
 validate $? "Downloading backend code to /tmp"
 
 mkdir -p /app &>>$LOGPATH
