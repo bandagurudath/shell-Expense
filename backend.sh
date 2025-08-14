@@ -60,7 +60,7 @@ validate $? "Unzipping backend code to /app"
 npm install &>>$LOGPATH
 validate $? "installing node js dependencies"
 
-cp /home/ec2-user/shell-expense/backend.service /etc/systemd/system/backend.service &>>$LOGPATH
+cp /home/ec2-user/shell-Expense/backend.service /etc/systemd/system/backend.service &>>$LOGPATH
 validate $? "copyinh backend service file to systemd"
 
 systemctl daemon-reload &>>$LOGPATH
