@@ -5,9 +5,6 @@ SCRIPTNAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGPATH=/tmp/$SCRIPTNAME-$TIMESTAMP.log
 
-echo "Enter mysql_root_password"
-read mysql_root_password
-
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
