@@ -30,7 +30,7 @@ echo "This script must be run by Super User"
 exit 1
 fi
 
-dnf module disbale nodejs -y &>>$LOGPATH
+dnf module disable nodejs -y &>>$LOGPATH
 validate $? "Disabling deafult nodejs"
 
 dnf module enable nodejs:20 -y &>>$LOGPATH
