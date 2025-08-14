@@ -30,6 +30,12 @@ fi
 dnf install nginx -y &>>$LOGPATH
 validate $? "Installing nginx"
 
+systemctl start nginx &>>$LOGPATH
+validate $? "starting nginx"
+
+systemctl enable nginx &>>$LOGPATH
+validate $? "enabling nginx"
+
 rm -rf /usr/share/nginx/html &>>$LOGPATH
 curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip &>>$LOGPATH
 validate $? "Downloading frontend code"
@@ -48,7 +54,8 @@ validate $? "starting nginx"
 systemctl enable nginx &>>$LOGPATH
 validate $? "enabling nginx"
 
-
+systemctl restart nginx &>>$LOGPATH
+validate $? "restarting nginx"
 
 
 
